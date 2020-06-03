@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import * as R from 'ramda'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { getRootTestState, getNumberState } from 'modules/au/selectors'
+import { addNumber } from 'modules/au/actions'
+
+const TestPage = () => {
+    const dispatch = useDispatch()
+    const numberState = useSelector(R.compose(getNumberState, getRootTestState))
+
+    return (
+        <div>
+            <h1>{numberState}</h1>
+            <input onChange={e => dispatch(addNumber(Number(e.target.value)))} />
+        </div>
+    )
 }
 
-export default App;
+export default TestPage
