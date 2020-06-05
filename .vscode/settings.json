@@ -1,0 +1,20 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.tabSize": 4,
+  "editor.autoIndent": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "git.ignoreLimitWarning": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true
+  },
+  "html.format.wrapLineLength": 150,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.semi": false,
+  "prettier.printWidth": 150,
+  "files.exclude": {
+    "node_modules": true
+  },
+  "typescript.preferences.importModuleSpecifier": "non-relative"
+}
