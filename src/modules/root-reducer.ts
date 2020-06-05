@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 
-import auReducer from './au/reducer'
-import { MODULE_NAME as AU_MODULE } from './au/types'
+import coursesReducer from './courses/reducer'
+import { MODULE_NAME as COURSES_MODULE } from './courses/types'
 
 export const rootReducer = combineReducers({
-    [AU_MODULE]: auReducer,
+  [COURSES_MODULE]: coursesReducer,
 })

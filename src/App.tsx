@@ -1,20 +1,19 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import * as R from 'ramda'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import { getRootTestState, getNumberState } from 'modules/au/selectors'
-import { addNumber } from 'modules/au/actions'
+import { getCourses } from 'modules/courses/actions'
 
 const TestPage = () => {
   const dispatch = useDispatch()
-  const numberState = useSelector(R.compose(getNumberState, getRootTestState))
+
+  useEffect(() => {
+    dispatch(getCourses())
+  }, [])
 
   return (
     <div>
       <Au>test</Au>
-      <h1>{numberState}</h1>
-      <input onChange={(e) => dispatch(addNumber(Number(e.target.value)))} />
     </div>
   )
 }
